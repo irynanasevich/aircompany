@@ -8,7 +8,7 @@ const ClassificationLevel = require('./models/ClassificationLevel');
 
 (function run() {
 
-    let planes = [
+    const planes = [
         new PassengerPlane('Boeing-737', 900, 12000, 60500, 164),
         new PassengerPlane('Boeing-737-800', 940, 12300, 63870, 192),
         new PassengerPlane('Boeing-747', 980, 16100, 70500, 242),
@@ -27,9 +27,9 @@ const ClassificationLevel = require('./models/ClassificationLevel');
         new ExperimentalPlane("Ryan X-13 Vertijet", 560, 307, 500, ExperimentalTypes.VTOL, ClassificationLevel.TOP_SECRET)
     ];
 
-    let airport = new Airport(planes);
-    let militaryAirport = new Airport(airport.getMilitaryPlanes());
-    let passengerAirport = new Airport(airport.getPassengerPlanes());
+    const airport = new Airport(planes);
+    const militaryAirport = new Airport(airport.getMilitaryPlanes());
+    const passengerAirport = new Airport(airport.getPassengerPlanes());
     console.log(`Military airport sorted by max distance: ${Airport.print(militaryAirport.sortByMaxDistance())}`);
     console.log(`Passenger airport sorted by max speed: ${Airport.print(passengerAirport.sortByMaxSpeed())}`);
     console.log(`Plane with max passenger capacity: ${Airport.print(passengerAirport.getPassengerPlaneWithMaxPassengersCapacity())}`);

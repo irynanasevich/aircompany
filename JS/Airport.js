@@ -13,7 +13,7 @@ class Airport {
         this.planes = planes;
     }
 
-     getPassengerPlanes() {
+    getPassengerPlanes() {
          const passengerPlanes = [];
          this.planes.forEach(plane => {
              if (plane instanceof PassengerPlane) {
@@ -21,6 +21,16 @@ class Airport {
              }
          });
          return passengerPlanes;
+    }
+
+    getExperimentalPlanes() {
+        const experimentalPlanes  = [];
+        this.planes.forEach(plane => {
+            if (plane instanceof ExperimentalPlane) {
+                experimentalPlanes.push(plane);
+            }
+        });
+        return experimentalPlanes;
     }
 
     getMilitaryPlanes() {
@@ -62,16 +72,6 @@ class Airport {
             }
         });
         return bomberMilitaryPlanes;
-    }
-
-    getExperimentalPlanes() {
-        const experimentalPlanes  = [];
-        this.planes.forEach(plane => {
-            if (plane instanceof ExperimentalPlane) {
-                experimentalPlanes.push(plane);
-            }
-        });
-        return experimentalPlanes;
     }
 
     sortByMaxDistance() {
